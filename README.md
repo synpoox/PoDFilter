@@ -1,8 +1,13 @@
-# Synpoo's Ultra Strict PoD Filter
-Written because I was getting tired of Cleglaw's getting notified in chat.  
-Discord: synpoo#7377  
+# Synpoo's Endgame PoD Filter
+
+This filter is probably too strict for you, use at your own risk.  
+But it comes with poe sounds! :)
+
+Discord: synpoo (@ me in the pod discord)  
 [https://twitch.tv/synpoo](https://twitch.tv/synpoo)
----
+
+![Za2gmq7](https://github.com/synpoox/PoDFilter/assets/80501583/15cff77e-99ec-4612-8cee-4fc3c11b1f87)
+
 ## Features
 - Enlarged item frames to reduce misclicks
 - Follows original D2 coloring (few accents here and there)
@@ -14,7 +19,10 @@ Discord: synpoo#7377
 - Displays iLvl of unid charms and jewels
 - Shows number of sockets/skill levels on runeword bases
 
-![Za2gmq7](https://github.com/synpoox/PoDFilter/assets/80501583/15cff77e-99ec-4612-8cee-4fc3c11b1f87)
+## PoE Sound Notifications
+1.  Download the sound files in the `\synpoo` directory
+2.  Place them in `Path of Diablo\filter\synpoo`
+
 
 ## Full list of SHOWN items
 **anything NOT listed here is hidden (WHILE UNIDENTIFIED)**
