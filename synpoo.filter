@@ -1,0 +1,220 @@
+// =============================================================================================
+//
+// Endgame PoD Filter
+//
+// *This filter was built for ENDGAME map speedclearing and WILL hide 99% of items*
+//
+// =============================================================================================
+
+Attribute[Author]: Synpoo
+Attribute[Name]: Endgame Filter
+Attribute[Version]: 1.1
+Attribute[Date]: Mar 13 2024
+
+// =============================================================
+// STYLES
+//
+// =============================================================
+Sound[Sound1]: "synpoo\Sound1"
+Sound[Sound2]: "synpoo\Sound2"
+Sound[Sound3]: "synpoo\Sound3"
+Sound[Sound4]: "synpoo\Sound4"
+Sound[Sound5]: "synpoo\Sound5"
+Sound[Sound6]: "synpoo\Sound6"
+ 
+TextMacro[Unique]: %NL% %GOLD%%NAME% %NL%%SPACE%
+TextMacro[Set]: %NL% %NAME% %NL%%SPACE%
+
+ItemStyle[Magic]: MapIcon = 88, BorderColor = 147, BorderSize = 2
+ItemStyle[Rare]: MapIcon = 93, BorderColor = 111, BorderSize = 2
+ItemStyle[Unique]: MapIcon = 90,  BorderColor = 100, BorderSize = 2, NotificationColor = GOLD, NotificationSound = Sound5
+ItemStyle[Set]: MapIcon = 89,  BorderColor = 132, BorderSize = 2, NotificationColor = GREEN, NotificationSound = Sound5
+ItemStyle[Runes]: MapIcon = 96, MapIconColor = 105, BackgroundColor = 32, BorderColor = 105, BorderSize = 2, NotificationColor = ORANGE, NotificationSound = Sound6
+ItemStyle[RunewordBase]: MapIcon = 92, BorderColor = 118, BorderSize = 2, NotificationColor = GRAY, NotificationSound = Sound3
+
+// =============================================================
+// BASIC ITEMS
+//
+// Hidden: All potions except supers and full rejuv
+// =============================================================
+ItemDisplay[GOLD<30000]:
+ItemDisplay[leg]: %NAME%
+ItemDisplay[hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4 OR rvs]:
+ItemDisplay[gps OR ops OR gpm OR opm OR gpl OR opl]:
+ItemDisplay[key OR vps OR yps OR wms OR tsc OR isc]:
+ItemDisplay[hp5]: %RED%*%WHITE%Hp
+ItemDisplay[mp5]: %BLUE%*%WHITE%Mp
+ItemDisplay[rvl]: %PURPLE%Full
+
+// =============================================================
+// GEMS
+//
+// Hidden: All except flawless skull and all Perfects
+// =============================================================
+ItemDisplay[skl OR skz]: %NL% %BORDER(94,2)%%TAN%%NAME% %NL%%SPACE%%NOTIFYSOUND(Sound3)%%NOTIFY(TAN)%%MAPICON(59)%
+ItemDisplay[GEMTIER=1 OR GEMTIER=2 OR GEMTIER=3 OR GEMTIER=4]:
+
+// =============================================================
+// ENDGAME QUEST ITEMS AND POD ITEMS
+//
+// =============================================================
+// Essences
+ItemDisplay[tes]: %GRAY%  Essence%ORANGE% (Andariel and Duriel)  %NOTIFY(ORANGE)%
+ItemDisplay[ceh]: %GRAY%  Essence%ORANGE% (Mephisto)  %NOTIFY(ORANGE)%
+ItemDisplay[bet]: %GRAY%  Essence%ORANGE% (Diablo)  %NOTIFY(ORANGE)%
+ItemDisplay[fed]: %GRAY%  Essence%ORANGE% (Baal)  %NOTIFY(ORANGE)%
+
+// Keys and Organs
+ItemDisplay[pk1]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Countess)  %PURPLE%O %NL%%SPACE%%NOTIFY(ORANGE)%
+ItemDisplay[pk2]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Summoner)  %PURPLE%O %NL%%SPACE%%NOTIFY(ORANGE)%
+ItemDisplay[pk3]: %NL% %PURPLE%O  %GRAY%Key%ORANGE% (Nihlathak)  %PURPLE%O %NL%%SPACE%%NOTIFY(ORANGE)%
+ItemDisplay[dhn OR bey OR mbr]: %NL% %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %NL%%SPACE%%NOTIFY(ORANGE)%
+
+// PoD Items
+ItemDisplay[cx5]: %MAPICON(91)%%BORDER(155,2)% %NL% %PURPLE% %NAME% %NL%%SPACE%%NOTIFY(PURPLE)%%NOTIFYSOUND(Sound2)%
+ItemDisplay[cx7]: %NAME%%NOTIFY(ORANGE)%
+ItemDisplay[maz]: %RED%%NAME%%NOTIFY(RED)%
+ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 OR MAP) !ID]: %MAPICON(19)%%BORDER(32,2)%%NL%%NAME%%NOTIFY(ORANGE)%%NOTIFYSOUND(Sound1)%%NL%%SPACE%
+ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
+
+// =============================================================
+// RUNES, JEWELS, CHARMS
+//
+// Hidden: Runes below Lem (Ko shows for unique armor upgrade recipe)
+// =============================================================
+ItemDisplay[RUNETIER>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%SPACE% <<Runes>>
+ItemDisplay[RUNETIER>19 AND RUNETIER<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%SPACE% <:Runes: NotificationSound = Sound2>
+ItemDisplay[RUNETIER=18]: * %NAME% * <:Runes: NotificationSound = 1>
+ItemDisplay[RUNETIER>0 AND RUNETIER<20]:
+
+// Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
+ItemDisplay[cm1 OR cm2 OR cm3 (!ID UNI)]: %NL% %PURPLE%OO  %GOLD%%NAME%  %PURPLE%OO %NL%%SPACE% <:Unique: NotificationSound = Sound6>
+ItemDisplay[cm1 OR cm3 (!ID AND ILVL>50)]: %MAPICON(88)%%BORDER(147,2)% %NL%  %NAME% [%ILVL%]  %NL%%SPACE%%NOTIFY(BLUE)%%NOTIFYSOUND(Sound3)%
+ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
+    
+// Hidden: Unid Jewels <ilvl 45
+ItemDisplay[jew MAG !ID]: %NAME% [%ILVL%] <<Magic>>
+ItemDisplay[jew RARE !ID]: %NL%  %NAME% [%ILVL%]  %NL%%SPACE% <:Rare: NotificationColor = YELLOW>
+ItemDisplay[jew UNI !ID]: %NL%O    %NAME%    O%NL%%SPACE% <:Unique: NotificationSound = Sound6>
+ItemDisplay[jew MAG OR RARE (!ID AND ILVL<45)]:
+
+// =============================================================
+// AMULETS, RINGS, BOLTS, ARROWS
+//
+// Hidden: (UNID) Magic amulets amulets/rings/quivers/arrows
+// - Unid Set rings, arrows, quivers
+// - Unid rare amulets/rings/arrows <ilvl74
+// =============================================================
+ItemDisplay[amu SET !ID]: %!Set!%<<Set>>
+ItemDisplay[amu OR rin (UNI !ID)]: %NL% %PURPLE%OO    %GOLD%%NAME%    %PURPLE%OO %NL%%SPACE% <:Unique: NotificationSound = Sound6>
+ItemDisplay[amu OR rin (!ID RARE AND ILVL>74)]: %NAME% [%ILVL%] <:Rare: NotificationColor = YELLOW> 
+ItemDisplay[aqv OR aq2 (!ID RARE AND ILVL>74)]:
+ItemDisplay[(amu OR rin OR aq2 OR cq2 OR aqv OR cqv) (NMAG OR MAG OR RARE) !ID]:
+ItemDisplay[(aq2 OR cq2 OR aqv OR cqv) UNI !ID]:
+ItemDisplay[rin SET !ID]:
+
+// =============================================================
+// WEAPONS
+//
+// =============================================================
+
+//Vendor items - currently hidden since autopickup exists
+//SK88=1 =32453 Gold. SK73=1 =32453 Gold.
+//ItemDisplay[WP12 NMAG !ETH (wnd OR ywn OR 9wn) ILVL>49 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+//ItemDisplay[WP12 NMAG !ETH SOCK=1 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+//ItemDisplay[NMAG !ETH !ED=15 (7tk OR 7ta OR 7bk)]: %ORANGE%$%PRICE%
+
+// UNIQUE
+// titans, tstroke, windforce
+ItemDisplay[UNI (ama OR amf OR 6lw) !ETH !ID]: %!Unique!% <<Unique>>
+// death cleaver, executioners justice, bartucs
+ItemDisplay[UNI (7wa OR 7gi OR 9tw) !ETH !ID]: %!Unique!% <<Unique>>
+// death's web, fathom
+ItemDisplay[UNI (7gw OR obf) !ETH !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
+// occy, eschutas
+ItemDisplay[UNI (oba OR obc) !ETH !ID]: %!Unique!% <<Unique>>
+// grandfather, fleshripper
+ItemDisplay[UNI (7gd OR 7kr) !ETH !ID]: %!Unique!% <<Unique>>
+// eth reaper's toll
+ItemDisplay[UNI 7s8 ETH !ID]: %!Unique!% <<Unique>>
+// ondals, azurewrath/lightsabre
+ItemDisplay[UNI (6cs OR 7cr) !ETH !ID]: %!Unique!% <<Unique>>
+
+// SET
+// nats wep
+ItemDisplay[SET 7qr !ETH !ID]: %!Set!% <<Set>>
+
+// RUNEWORD BASES
+// 4os GMB+3 skill
+ItemDisplay[amc SOCK=4 TABSK0=3 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3bow %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+// 4os eth thresher/giant thresher/mancatcher
+ItemDisplay[(7s8 OR 7wc OR 7br) SOCK=4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os +ED ETH  %NL%%SPACE% <<RunewordBase>>
+// 6os normal eth war pike
+ItemDisplay[7p7 NMAG SOCK=6 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 0 or 6os superior eth war pike
+ItemDisplay[7p7 SUP (SOCK=0 OR SOCK=6) ED>0 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 5os+ superior zerker
+ItemDisplay[7wa SUP SOCK>4 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+// 5os+ eth superior zerker, col blade, col sword
+ItemDisplay[(7wa OR 7gd OR 7fb) SUP SOCK>4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 3os elite sin claw +3 light sentry
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK271=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Sentry %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+// 3os elite sin claw +3 wake
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK262=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Wake %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+
+// hide all else
+ItemDisplay[WEAPON (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[WEAPON NMAG !RW]:
+
+// =============================================================
+// ARMOR
+//
+// =============================================================
+
+// UNIQUE
+// arreats, jalal's, ravenlore
+ItemDisplay[UNI (baa OR dra OR dre) !ETH !ID]: %!Unique!% <<Unique>>
+// arach, griffs
+ItemDisplay[UNI (ulc OR ci3) !ETH !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
+// tyrael
+ItemDisplay[UNI uar !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
+// vmagi, shaft, skullders
+ItemDisplay[UNI (xea OR xhn OR xpl) !ETH !ID]: %!Unique!% <<Unique>>
+// arkaines, gbane, tgods, razortail
+ItemDisplay[UNI (upl OR utu OR zhb OR zvb) !ETH !ID]: %!Unique!% <<Unique>>
+// silks, war trav, dracs
+ItemDisplay[UNI (xmb OR xtb OR uvg) !ETH !ID]: %!Unique!% <<Unique>>
+// shako, steelshade, nightwings veil
+ItemDisplay[UNI (uap OR ulm OR uhm) !ETH !ID]: %!Unique!% <<Unique>>
+// andys, gaze, magefist, steelrend
+ItemDisplay[UNI (usk OR xh9 OR tgl OR uhg) !ETH !ID]: %!Unique!% <<Unique>>
+// hoz, stormshield, homunc, darkforce
+ItemDisplay[UNI (pa9 OR uit OR nea OR nef) !ETH !ID]: %!Unique!% <<Unique>>
+
+// SET
+// aldurs boots, trang helm, tals chest
+ItemDisplay[SET (xtb OR uh9 OR uth) !ETH !ID]: %!Set!% <<Set>>
+
+// RUNEWORD BASES
+// 3os+ superior 15ed mage, dusk, archon
+ItemDisplay[SUP (xtp OR uui OR utp) SOCK>2 ED=15 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+// 3os+ 15ed eth elite armors (treachery, stone, duress)
+ItemDisplay[SUP ELT EQ2 SOCK>2 ED=15 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 0 socket or 4os 44-45res eth sacred targe, vortex shield
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=44 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %YELLOW%44@res %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=45 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %YELLOW%45@res %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 0 socket or 4os 15ed eth sacred targe, vortex shield (exile)
+ItemDisplay[SUP (pab OR paf) (SOCK=0 OR SOCK=4) ED=15 ETH !RW]: %NL%  %DARK_GREEN%%NAME% +15%ed %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
+// 0 socket or 4os -10req monarch
+ItemDisplay[SUP uit (SOCK=0 OR SOCK=4) STAT91=-10 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% -10%req %RED%%SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+
+// RARES >ilvl79
+// gloves, boots, circs
+ItemDisplay[RARE (EQ4 OR EQ5 OR EQ7) ILVL>79 !ETH !ID]: %NAME% [%ILVL%] <<Rare>>
+
+// hide all else
+ItemDisplay[ARMOR (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[ARMOR NMAG !RW]:
+
+// catch
+ItemDisplay[]: %NAME%
