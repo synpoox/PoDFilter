@@ -1,3 +1,11 @@
+## v1.1
+Mar 13 2024
+
+- update filter for season 12
+- general coloring changes, add border to item displays
+- add map icons
+- add poe sound notifications
+
 ## v0.1.9f
 3/31/2021
 
