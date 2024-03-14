@@ -8,8 +8,8 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.1
-Attribute[Date]: Mar 13 2024
+Attribute[Version]: 1.2
+Attribute[Date]: Mar 14 2024
 
 // =============================================================
 // STYLES
@@ -74,7 +74,7 @@ ItemDisplay[dhn OR bey OR mbr]: %NL% %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %NL%
 ItemDisplay[cx5]: %MAPICON(91)%%BORDER(155,2)% %NL% %PURPLE% %NAME% %NL%%SPACE%%NOTIFY(PURPLE)%%NOTIFYSOUND(Sound2)%
 ItemDisplay[cx7]: %NAME%%NOTIFY(ORANGE)%
 ItemDisplay[maz]: %RED%%NAME%%NOTIFY(RED)%
-ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 OR MAP) !ID]: %MAPICON(19)%%BORDER(32,2)%%NL%%NAME%%NOTIFY(ORANGE)%%NOTIFYSOUND(Sound1)%%NL%%SPACE%
+ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 OR MAP) !ID]: %MAPICON(50)%%BORDER(32,2)%%NL%%NAME%%NOTIFY(ORANGE)%%NOTIFYSOUND(Sound1)%%NL%%SPACE%
 ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
 
 // =============================================================
@@ -84,7 +84,7 @@ ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
 // =============================================================
 ItemDisplay[RUNETIER>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%SPACE% <<Runes>>
 ItemDisplay[RUNETIER>19 AND RUNETIER<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%SPACE% <:Runes: NotificationSound = Sound2>
-ItemDisplay[RUNETIER=18]: * %NAME% * <:Runes: NotificationSound = 1>
+ItemDisplay[RUNETIER=18 OR RUNETIER=15]: %NAME% <:Runes: NotificationSound = 1>
 ItemDisplay[RUNETIER>0 AND RUNETIER<20]:
 
 // Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
@@ -125,16 +125,16 @@ ItemDisplay[rin SET !ID]:
 //ItemDisplay[NMAG !ETH !ED=15 (7tk OR 7ta OR 7bk)]: %ORANGE%$%PRICE%
 
 // UNIQUE
-// titans, tstroke, windforce
-ItemDisplay[UNI (ama OR amf OR 6lw) !ETH !ID]: %!Unique!% <<Unique>>
+// titans, windforce
+ItemDisplay[UNI (ama OR 6lw) !ETH !ID]: %!Unique!% <<Unique>>
 // death cleaver, executioners justice, bartucs
 ItemDisplay[UNI (7wa OR 7gi OR 9tw) !ETH !ID]: %!Unique!% <<Unique>>
 // death's web, fathom
 ItemDisplay[UNI (7gw OR obf) !ETH !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
 // occy, eschutas
 ItemDisplay[UNI (oba OR obc) !ETH !ID]: %!Unique!% <<Unique>>
-// grandfather, fleshripper
-ItemDisplay[UNI (7gd OR 7kr) !ETH !ID]: %!Unique!% <<Unique>>
+// grandfather
+ItemDisplay[UNI (7gd) !ETH !ID]: %!Unique!% <<Unique>>
 // eth reaper's toll
 ItemDisplay[UNI 7s8 ETH !ID]: %!Unique!% <<Unique>>
 // ondals, azurewrath/lightsabre
@@ -158,9 +158,9 @@ ItemDisplay[7wa SUP SOCK>4 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os  %NL%
 // 5os+ eth superior zerker, col blade, col sword
 ItemDisplay[(7wa OR 7gd OR 7fb) SUP SOCK>4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
 // 3os elite sin claw +3 light sentry
-ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK271=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Sentry %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+ItemDisplay[!NORM CL5 NMAG SOCK=3 SK271=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Sentry %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
 // 3os elite sin claw +3 wake
-ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK262=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Wake %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+ItemDisplay[!NORM CL5 NMAG SOCK=3 SK262=3 !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3 Wake %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
 
 // hide all else
 ItemDisplay[WEAPON (MAG OR RARE OR UNI OR SET) !ID]:
@@ -186,14 +186,14 @@ ItemDisplay[UNI (upl OR utu OR zhb OR zvb) !ETH !ID]: %!Unique!% <<Unique>>
 ItemDisplay[UNI (xmb OR xtb OR uvg) !ETH !ID]: %!Unique!% <<Unique>>
 // shako, steelshade, nightwings veil
 ItemDisplay[UNI (uap OR ulm OR uhm) !ETH !ID]: %!Unique!% <<Unique>>
-// andys, gaze, magefist, steelrend
-ItemDisplay[UNI (usk OR xh9 OR tgl OR uhg) !ETH !ID]: %!Unique!% <<Unique>>
+// andys, gaze, steelrend
+ItemDisplay[UNI (usk OR xh9 OR uhg) !ETH !ID]: %!Unique!% <<Unique>>
 // hoz, stormshield, homunc, darkforce
 ItemDisplay[UNI (pa9 OR uit OR nea OR nef) !ETH !ID]: %!Unique!% <<Unique>>
 
 // SET
-// aldurs boots, trang helm, tals chest
-ItemDisplay[SET (xtb OR uh9 OR uth) !ETH !ID]: %!Set!% <<Set>>
+// aldurs boots, tals chest
+ItemDisplay[SET (xtb OR uth) !ETH !ID]: %!Set!% <<Set>>
 
 // RUNEWORD BASES
 // 3os+ superior 15ed mage, dusk, archon
