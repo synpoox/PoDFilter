@@ -1,3 +1,10 @@
+## v1.2
+Mar 14 2024
+
+- update some map icons
+- show hel rune
+- hide tstroke, fleshripper, magefist, trang helm, no socket 3skill claws
+
 ## v1.1
 Mar 13 2024
 
