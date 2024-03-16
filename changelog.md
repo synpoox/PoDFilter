@@ -1,3 +1,9 @@
+## v1.3
+Mar 15 2024
+
+- remove bgcolor on hel and ko
+- combine some rules to reduce filter size
+
 ## v1.2
 Mar 14 2024
 
