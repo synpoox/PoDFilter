@@ -20,10 +20,8 @@ Discord: synpoo (@ me in the pod discord)
 - Shows number of sockets/skill levels on runeword bases
 
 ## PoE Sound Notifications
-1.  Download the sound files in the `\synpoo` directory
-2.  Place them in `Path of Diablo\filter\synpoo`
-3.  Remove the `synpoo_` prefix in the names of all sound files, if they have it.
-
+1.  Download the `sounds.zip` file
+2.  Extract the files into `Path of Diablo\filter\synpoo`
 
 ## Full list of SHOWN items
 **anything NOT listed here is hidden (WHILE UNIDENTIFIED)**
