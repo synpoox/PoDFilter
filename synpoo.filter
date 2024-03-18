@@ -8,8 +8,8 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.3
-Attribute[Date]: Mar 15 2024
+Attribute[Version]: 1.3b
+Attribute[Date]: Mar 17 2024
 
 // =============================================================
 // STYLES
@@ -125,18 +125,14 @@ ItemDisplay[rin SET !ID]:
 //ItemDisplay[NMAG !ETH !ED=15 (7tk OR 7ta OR 7bk)]: %ORANGE%$%PRICE%
 
 // UNIQUE
-// titans, windforce
-ItemDisplay[UNI (ama OR 6lw) !ETH !ID]: %!Unique!% <<Unique>>
-// death cleaver, executioners justice, bartucs
-ItemDisplay[UNI (7wa OR 7gi OR 9tw) !ETH !ID]: %!Unique!% <<Unique>>
-// death's web, fathom, occy, eschutas
-ItemDisplay[UNI (7gw OR obf OR oba OR obc) !ETH !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
-// grandfather
-ItemDisplay[UNI (7gd) !ETH !ID]: %!Unique!% <<Unique>>
+// titans, windforce, occy, eschutas, ondals
+ItemDisplay[UNI (ama OR 6lw OR oba OR obc OR 6cs) !ETH !ID]: %!Unique!% <<Unique>>
+// death cleaver, executioners justice, grandfather, azurewrath/lightsabre
+ItemDisplay[UNI (7wa OR 7gi OR 7gd OR 7cr) !ETH !ID]: %!Unique!% <<Unique>>
+// death's web, fathom
+ItemDisplay[UNI (7gw OR obf) !ETH !ID]: %!Unique!% <:Unique: NotificationSound = Sound6>
 // eth reaper's toll
 ItemDisplay[UNI 7s8 ETH !ID]: %!Unique!% <<Unique>>
-// ondals, azurewrath/lightsabre
-ItemDisplay[UNI (6cs OR 7cr) !ETH !ID]: %!Unique!% <<Unique>>
 
 // SET
 // nats wep
