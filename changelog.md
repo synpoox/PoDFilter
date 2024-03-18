@@ -1,3 +1,9 @@
+## v1.3b
+Mar 17 2024
+
+- hide bartucs
+- combine some rules again
+
 ## v1.3
 Mar 15 2024
 
