@@ -8,8 +8,8 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.3b
-Attribute[Date]: Mar 17 2024
+Attribute[Version]: 1.4
+Attribute[Date]: Mar 24 2024
 
 // =============================================================
 // STYLES
@@ -31,6 +31,7 @@ ItemStyle[Unique]: MapIcon = 90,  BorderColor = 100, BorderSize = 2, Notificatio
 ItemStyle[Set]: MapIcon = 89,  BorderColor = 132, BorderSize = 2, NotificationColor = GREEN, NotificationSound = Sound5
 ItemStyle[Runes]: MapIcon = 96, MapIconColor = 105, BackgroundColor = 32, BorderColor = 105, BorderSize = 2, NotificationColor = ORANGE, NotificationSound = Sound6
 ItemStyle[RunewordBase]: MapIcon = 92, BorderColor = 118, BorderSize = 2, NotificationColor = GRAY, NotificationSound = Sound3
+ItemStyle[Skulls]: MapIcon = 59, BorderColor = 94, BorderSize = 2, NotificationColor = TAN, NotificationSound = Sound3
 
 // =============================================================
 // BASIC ITEMS
@@ -44,14 +45,15 @@ ItemDisplay[gps OR ops OR gpm OR opm OR gpl OR opl]:
 ItemDisplay[key OR vps OR yps OR wms OR tsc OR isc]:
 ItemDisplay[hp5]: %RED%*%WHITE%Hp
 ItemDisplay[mp5]: %BLUE%*%WHITE%Mp
-ItemDisplay[rvl]: %PURPLE%Full
+ItemDisplay[rvl]: %BORDER(155,4)%%PURPLE%Full
 
 // =============================================================
 // GEMS
 //
 // Hidden: All except flawless skull and all Perfects
 // =============================================================
-ItemDisplay[skl OR skz]: %NL% %BORDER(94,2)%%TAN%%NAME% %NL%%SPACE%%NOTIFYSOUND(Sound3)%%NOTIFY(TAN)%%MAPICON(59)%
+ItemDisplay[skl]: %TAN%Skull%NL%Flawless <<Skulls>>
+ItemDisplay[skz]: %TAN%Skull%NL%Perfect <<Skulls>>
 ItemDisplay[GEMTIER=1 OR GEMTIER=2 OR GEMTIER=3 OR GEMTIER=4]:
 
 // =============================================================
@@ -80,11 +82,11 @@ ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
 // =============================================================
 // RUNES, JEWELS, CHARMS
 //
-// Hidden: Runes below Lem (Ko shows for unique armor upgrade recipe)
+// Hidden: Runes below Lem (Exceptions: Hel, Lum, Ko)
 // =============================================================
 ItemDisplay[RUNETIER>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%SPACE% <<Runes>>
 ItemDisplay[RUNETIER>19 AND RUNETIER<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%SPACE% <:Runes: NotificationSound = Sound2>
-ItemDisplay[RUNETIER=18 OR RUNETIER=15]: %NAME% <:Runes: NotificationSound = 1, BackgroundColor>
+ItemDisplay[RUNETIER=18 OR RUNETIER=17 OR RUNETIER=15]: %NAME% <:Runes: NotificationSound = 1, BackgroundColor>
 ItemDisplay[RUNETIER>0 AND RUNETIER<20]:
 
 // Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
@@ -180,8 +182,8 @@ ItemDisplay[UNI (upl OR utu OR zhb OR zvb) !ETH !ID]: %!Unique!% <<Unique>>
 ItemDisplay[UNI (xmb OR xtb OR uvg OR uhg) !ETH !ID]: %!Unique!% <<Unique>>
 // shako, steelshade, nightwings veil, andys, gaze
 ItemDisplay[UNI (uap OR ulm OR uhm OR usk OR xh9) !ETH !ID]: %!Unique!% <<Unique>>
-// hoz, stormshield, homunc, darkforce
-ItemDisplay[UNI (pa9 OR uit OR nea OR nef) !ETH !ID]: %!Unique!% <<Unique>>
+// hoz, stormshield, homunc, darkforce, alma negra
+ItemDisplay[UNI (pa9 OR uit OR nea OR nef OR pac) !ETH !ID]: %!Unique!% <<Unique>>
 
 // SET
 // aldurs boots, tals chest
