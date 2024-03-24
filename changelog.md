@@ -1,3 +1,11 @@
+## v1.4
+Mar 24 2024
+
+- change text styling of skulls
+- add border to full rejuv
+- show Lum
+- show alma negra
+
 ## v1.3b
 Mar 17 2024
 
