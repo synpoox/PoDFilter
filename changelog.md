@@ -1,3 +1,12 @@
+## v1.5
+Mar 29 2024
+
+- adjust skull text styling again
+- add map icon for key of chaos
+- change map icon of magic jewel
+- add +3 4os matriarch bow
+- show trang gloves (hemo op)
+
 ## v1.4
 Mar 24 2024
 
