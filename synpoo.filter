@@ -8,8 +8,8 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.4
-Attribute[Date]: Mar 24 2024
+Attribute[Version]: 1.5
+Attribute[Date]: Mar 29 2024
 
 // =============================================================
 // STYLES
@@ -52,8 +52,7 @@ ItemDisplay[rvl]: %BORDER(155,4)%%PURPLE%Full
 //
 // Hidden: All except flawless skull and all Perfects
 // =============================================================
-ItemDisplay[skl]: %TAN%Skull%NL%Flawless <<Skulls>>
-ItemDisplay[skz]: %TAN%Skull%NL%Perfect <<Skulls>>
+ItemDisplay[skl OR skz]: %TAN%o%NL%%NAME% <<Skulls>>
 ItemDisplay[GEMTIER=1 OR GEMTIER=2 OR GEMTIER=3 OR GEMTIER=4]:
 
 // =============================================================
@@ -74,7 +73,7 @@ ItemDisplay[dhn OR bey OR mbr]: %NL% %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %NL%
 
 // PoD Items
 ItemDisplay[cx5]: %MAPICON(91)%%BORDER(155,2)% %NL% %PURPLE% %NAME% %NL%%SPACE%%NOTIFY(PURPLE)%%NOTIFYSOUND(Sound2)%
-ItemDisplay[cx7]: %NAME%%NOTIFY(ORANGE)%
+ItemDisplay[cx7]: %NAME%%NOTIFY(ORANGE)%%BORDER(105,2)%%MAPICON(29)%
 ItemDisplay[maz]: %RED%%NAME%%NOTIFY(RED)%
 ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 OR MAP) !ID]: %MAPICON(50)%%BORDER(32,2)%%NL%%NAME%%NOTIFY(ORANGE)%%NOTIFYSOUND(Sound1)%%NL%%SPACE%
 ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
@@ -95,7 +94,7 @@ ItemDisplay[cm1 OR cm3 (!ID AND ILVL>50)]: %MAPICON(88)%%BORDER(147,2)% %NL%  %N
 ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
     
 // Hidden: Unid Jewels <ilvl 45
-ItemDisplay[jew MAG !ID]: %NAME% [%ILVL%] <<Magic>>
+ItemDisplay[jew MAG !ID]: %NAME% [%ILVL%] <:Magic: MapIcon = 47>
 ItemDisplay[jew RARE !ID]: %NL%  %NAME% [%ILVL%]  %NL%%SPACE% <:Rare: NotificationColor = YELLOW>
 ItemDisplay[jew UNI !ID]: %NL%O    %NAME%    O%NL%%SPACE% <:Unique: NotificationSound = Sound6>
 ItemDisplay[jew MAG OR RARE (!ID AND ILVL<45)]:
@@ -141,8 +140,8 @@ ItemDisplay[UNI 7s8 ETH !ID]: %!Unique!% <<Unique>>
 ItemDisplay[SET 7qr !ETH !ID]: %!Set!% <<Set>>
 
 // RUNEWORD BASES
-// 4os GMB+3 skill
-ItemDisplay[amc SOCK=4 TABSK0=3 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3bow %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
+// 4os GMB/MB+3 skill
+ItemDisplay[(amc OR amb) SOCK=4 TABSK0=3 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3bow %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
 // 4os eth thresher/giant thresher/mancatcher
 ItemDisplay[(7s8 OR 7wc OR 7br) SOCK=4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os +ED ETH  %NL%%SPACE% <<RunewordBase>>
 // 6os normal eth war pike
@@ -186,8 +185,8 @@ ItemDisplay[UNI (uap OR ulm OR uhm OR usk OR xh9) !ETH !ID]: %!Unique!% <<Unique
 ItemDisplay[UNI (pa9 OR uit OR nea OR nef OR pac) !ETH !ID]: %!Unique!% <<Unique>>
 
 // SET
-// aldurs boots, tals chest
-ItemDisplay[SET (xtb OR uth) !ETH !ID]: %!Set!% <<Set>>
+// aldurs boots, tals chest, trang gloves
+ItemDisplay[SET (xtb OR uth OR xmg) !ETH !ID]: %!Set!% <<Set>>
 
 // RUNEWORD BASES
 // 3os+ superior 15ed mage, dusk, archon
