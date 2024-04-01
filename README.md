@@ -19,6 +19,11 @@ Discord: synpoo (@ me in the pod discord)
 - Displays iLvl of unid charms and jewels
 - Shows number of sockets/skill levels on runeword bases
 
+## Filter Levels - Softest to Strictest
+1. Util Runes + Rares + Jewels: Shows additional utility runes Ko, Lum, Hel
+2. Rares + Jewels: Hides utilty runes
+3. Endgame 99: Hides all rares (except rings), magic/rare jewels, utility runes
+
 ## PoE Sound Notifications
 1.  Download the `sounds.zip` file
 2.  Extract the files into `Path of Diablo\filter\synpoo`
@@ -40,19 +45,17 @@ Discord: synpoo (@ me in the pod discord)
 - All unique charms, jewels, rings, amulets
 - Magic grand charms, magic small charms above ilvl50
 - Rare and magic jewels above ilvl45
-- Rare arrows, amulets, rings above ilvl74  
+- Rare amulets, rings above ilvl74  
 
 *weapons - uniques*
 - Titan's Revenge
 - Windforce
 - Death Cleaver
 - Executioner's Justice
-- Bartuc's
-- Fleshripper
 - Oculus
 - Eschuta's
 - Fathom
-- Reaper's Toll
+- Eth Reaper's Toll
 - Ondals
 - Azurewrath
 - Lightsabre
@@ -78,7 +81,6 @@ Discord: synpoo (@ me in the pod discord)
 - Griffon's
 - Thundergods
 - Arachnid Mesh
-- Verdungo's
 - Vipermagi
 - Shaftstop
 - Skullder's
@@ -87,7 +89,6 @@ Discord: synpoo (@ me in the pod discord)
 - Tyrael's Might
 - Silkweave
 - War Trav
-- Shadow Dancer
 - Dracs
 - Steelrend
 - Vamp Gaze
@@ -102,7 +103,7 @@ Discord: synpoo (@ me in the pod discord)
 
 *armor - set*
 - Aldur's Boots
-- Trang Helm
+- Trang glove
 - Tal's Chest
 
 *armor - runeword bases*
