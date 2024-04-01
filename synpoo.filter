@@ -8,13 +8,21 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.5
-Attribute[Date]: Mar 29 2024
+Attribute[Version]: 1.6
+Attribute[Date]: Apr 01 2024
 
 // =============================================================
-// STYLES
+// STYLES & FILTER LEVELS
 //
 // =============================================================
+
+// Shows utlity runes (Lum, Ko, Hel), rare gloves boots circlets ammys, jewels
+FilterLevel[1]: Util Runes+Rares+Jewels
+// Shows rare gloves, boots, circlets, ammys, jewels
+FilterLevel[2]: Rares+Jewels
+// Strictest mode that hides utility runes, rares (gloves, boots, circlets, ammys, still shows rings), magic/rare jewels
+FilterLevel[3]: Endgame 99
+
 Sound[Sound1]: "synpoo\Sound1"
 Sound[Sound2]: "synpoo\Sound2"
 Sound[Sound3]: "synpoo\Sound3"
@@ -31,7 +39,7 @@ ItemStyle[Unique]: MapIcon = 90,  BorderColor = 100, BorderSize = 2, Notificatio
 ItemStyle[Set]: MapIcon = 89,  BorderColor = 132, BorderSize = 2, NotificationColor = GREEN, NotificationSound = Sound5
 ItemStyle[Runes]: MapIcon = 96, MapIconColor = 105, BackgroundColor = 32, BorderColor = 105, BorderSize = 2, NotificationColor = ORANGE, NotificationSound = Sound6
 ItemStyle[RunewordBase]: MapIcon = 92, BorderColor = 118, BorderSize = 2, NotificationColor = GRAY, NotificationSound = Sound3
-ItemStyle[Skulls]: MapIcon = 59, BorderColor = 94, BorderSize = 2, NotificationColor = TAN, NotificationSound = Sound3
+ItemStyle[Skulls]: MapIcon = 59, BorderColor = 94, BorderSize = 2, NotificationColor = TAN, NotificationSound = Sound4
 
 // =============================================================
 // BASIC ITEMS
@@ -81,11 +89,11 @@ ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
 // =============================================================
 // RUNES, JEWELS, CHARMS
 //
-// Hidden: Runes below Lem (Exceptions: Hel, Lum, Ko)
+// Hidden: Runes below Lem
 // =============================================================
 ItemDisplay[RUNETIER>25]: %NL% %PURPLE%OOO      %ORANGE%%NAME%      %PURPLE%OOO %NL%%SPACE% <<Runes>>
 ItemDisplay[RUNETIER>19 AND RUNETIER<26]: %NL% %PURPLE%OO  %ORANGE%%NAME%  %PURPLE%OO %NL%%SPACE% <:Runes: NotificationSound = Sound2>
-ItemDisplay[RUNETIER=18 OR RUNETIER=17 OR RUNETIER=15]: %NAME% <:Runes: NotificationSound = 1, BackgroundColor>
+ItemDisplay[RUNETIER=18 OR RUNETIER=17 OR RUNETIER=15 FILTERLVL=1]: %NAME% <:Runes: NotificationSound = 1, BackgroundColor>
 ItemDisplay[RUNETIER>0 AND RUNETIER<20]:
 
 // Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
@@ -94,10 +102,10 @@ ItemDisplay[cm1 OR cm3 (!ID AND ILVL>50)]: %MAPICON(88)%%BORDER(147,2)% %NL%  %N
 ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
     
 // Hidden: Unid Jewels <ilvl 45
-ItemDisplay[jew MAG !ID]: %NAME% [%ILVL%] <:Magic: MapIcon = 47>
-ItemDisplay[jew RARE !ID]: %NL%  %NAME% [%ILVL%]  %NL%%SPACE% <:Rare: NotificationColor = YELLOW>
+ItemDisplay[jew MAG !ID FILTERLVL<3]: %NAME% [%ILVL%] <:Magic: MapIcon = 21>
+ItemDisplay[jew RARE !ID FILTERLVL<3]: %NL%  %NAME% [%ILVL%]  %NL%%SPACE% <:Rare: NotificationColor = YELLOW, MapIcon = 26>
 ItemDisplay[jew UNI !ID]: %NL%O    %NAME%    O%NL%%SPACE% <:Unique: NotificationSound = Sound6>
-ItemDisplay[jew MAG OR RARE (!ID AND ILVL<45)]:
+ItemDisplay[jew (MAG OR RARE) !ID]:
 
 // =============================================================
 // AMULETS, RINGS, BOLTS, ARROWS
@@ -108,7 +116,8 @@ ItemDisplay[jew MAG OR RARE (!ID AND ILVL<45)]:
 // =============================================================
 ItemDisplay[amu SET !ID]: %!Set!%<<Set>>
 ItemDisplay[amu OR rin (UNI !ID)]: %NL% %PURPLE%OO    %GOLD%%NAME%    %PURPLE%OO %NL%%SPACE% <:Unique: NotificationSound = Sound6>
-ItemDisplay[amu OR rin (!ID RARE AND ILVL>74)]: %NAME% [%ILVL%] <:Rare: NotificationColor = YELLOW> 
+ItemDisplay[amu !ID RARE ILVL>74 FILTERLVL<3]: %NAME% [%ILVL%] <:Rare: NotificationColor = YELLOW> 
+ItemDisplay[rin !ID RARE ILVL>74]: %NAME% [%ILVL%] <:Rare: NotificationColor = YELLOW> 
 ItemDisplay[aqv OR aq2 (!ID RARE AND ILVL>74)]:
 ItemDisplay[(amu OR rin OR aq2 OR cq2 OR aqv OR cqv) (NMAG OR MAG OR RARE) !ID]:
 ItemDisplay[(aq2 OR cq2 OR aqv OR cqv) UNI !ID]:
@@ -143,7 +152,7 @@ ItemDisplay[SET 7qr !ETH !ID]: %!Set!% <<Set>>
 // 4os GMB/MB+3 skill
 ItemDisplay[(amc OR amb) SOCK=4 TABSK0=3 !ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%+3bow %SOCKETS%os  %NL%%SPACE% <<RunewordBase>>
 // 4os eth thresher/giant thresher/mancatcher
-ItemDisplay[(7s8 OR 7wc OR 7br) SOCK=4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os +ED ETH  %NL%%SPACE% <<RunewordBase>>
+ItemDisplay[(7s8 OR 7wc OR 7br) SOCK=4 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
 // 6os normal eth war pike
 ItemDisplay[7p7 NMAG SOCK=6 ETH !RW]: %NL%  %DARK_GREEN%%NAME% %RED%%SOCKETS%os ETH  %NL%%SPACE% <<RunewordBase>>
 // 0 or 6os superior eth war pike
@@ -203,7 +212,7 @@ ItemDisplay[SUP uit (SOCK=0 OR SOCK=4) STAT91=-10 !ETH !RW]: %NL%  %DARK_GREEN%%
 
 // RARES >ilvl79
 // gloves, boots, circs
-ItemDisplay[RARE (EQ4 OR EQ5 OR EQ7) ILVL>79 !ETH !ID]: %NAME% [%ILVL%] <<Rare>>
+ItemDisplay[RARE (EQ4 OR EQ5 OR EQ7) ILVL>79 !ETH !ID FILTERLVL<3]: %NAME% [%ILVL%] <<Rare>>
 
 // hide all else
 ItemDisplay[ARMOR (MAG OR RARE OR UNI OR SET) !ID]:
