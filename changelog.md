@@ -1,3 +1,11 @@
+## v1.6
+Apr 01 2024
+
+- add filter levels
+- change skull sound notification
+- change map icon of rare jewel
+- fix name display of eth spears
+
 ## v1.5
 Mar 29 2024
 
