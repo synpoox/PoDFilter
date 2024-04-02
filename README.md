@@ -22,7 +22,7 @@ Discord: synpoo (@ me in the pod discord)
 ## Filter Levels - Softest to Strictest
 1. Util Runes + Rares + Jewels: Shows additional utility runes Ko, Lum, Hel
 2. Rares + Jewels: Hides utilty runes
-3. Endgame 99: Hides all rares (except rings), magic/rare jewels, utility runes
+3. Endgame 99: Hides all rares (except rings), magic/rare jewels, utility runes, chaos key, gheeds
 
 ## PoE Sound Notifications
 1.  Download the `sounds.zip` file
