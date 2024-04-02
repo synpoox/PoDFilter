@@ -8,8 +8,8 @@
 
 Attribute[Author]: Synpoo
 Attribute[Name]: Endgame Filter
-Attribute[Version]: 1.6
-Attribute[Date]: Apr 01 2024
+Attribute[Version]: 1.6b
+Attribute[Date]: Apr 02 2024
 
 // =============================================================
 // STYLES & FILTER LEVELS
@@ -81,7 +81,8 @@ ItemDisplay[dhn OR bey OR mbr]: %NL% %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %NL%
 
 // PoD Items
 ItemDisplay[cx5]: %MAPICON(91)%%BORDER(155,2)% %NL% %PURPLE% %NAME% %NL%%SPACE%%NOTIFY(PURPLE)%%NOTIFYSOUND(Sound2)%
-ItemDisplay[cx7]: %NAME%%NOTIFY(ORANGE)%%BORDER(105,2)%%MAPICON(29)%
+ItemDisplay[cx7 FILTERLVL<3]: %NAME%%NOTIFY(ORANGE)%%BORDER(105,2)%%MAPICON(29)%
+ItemDisplay[cx7]:
 ItemDisplay[maz]: %RED%%NAME%%NOTIFY(RED)%
 ItemDisplay[(ma1 OR ma2 OR ma3 OR ma4 OR ma5 OR ma6 OR ma7 OR ma8 OR ma9 OR ma10 OR MAP) !ID]: %MAPICON(50)%%BORDER(32,2)%%NL%%NAME%%NOTIFY(ORANGE)%%NOTIFYSOUND(Sound1)%%NL%%SPACE%
 ItemDisplay[SPECIAL OR SYNTH]: %NAME% <:Unique: NotificationSound = Sound6>
@@ -97,6 +98,7 @@ ItemDisplay[RUNETIER=18 OR RUNETIER=17 OR RUNETIER=15 FILTERLVL=1]: %NAME% <:Run
 ItemDisplay[RUNETIER>0 AND RUNETIER<20]:
 
 // Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
+ItemDisplay[cm3 !ID UNI FILTERLVL=3]:
 ItemDisplay[cm1 OR cm2 OR cm3 (!ID UNI)]: %NL% %PURPLE%OO  %GOLD%%NAME%  %PURPLE%OO %NL%%SPACE% <:Unique: NotificationSound = Sound6>
 ItemDisplay[cm1 OR cm3 (!ID AND ILVL>50)]: %MAPICON(88)%%BORDER(147,2)% %NL%  %NAME% [%ILVL%]  %NL%%SPACE%%NOTIFY(BLUE)%%NOTIFYSOUND(Sound3)%
 ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
