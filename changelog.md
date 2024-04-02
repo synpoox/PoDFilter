@@ -1,3 +1,8 @@
+## v1.6b
+Apr 02 2024
+
+- hide chaos key, gheeds at Endgame 99
+
 ## v1.6
 Apr 01 2024
 
